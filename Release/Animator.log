@@ -1,0 +1,129 @@
+﻿Build started 8/20/2014 10:13:16 PM.
+     1>Project "C:\Users\cktang\Desktop\AniSkelS12-compressed\AniSkelS12\Animator.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Ilocal/include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D SAMPLE_SOLUTION /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt curve.cpp curveevaluator.cpp linearcurveevaluator.cpp camera.cpp modelerapp.cpp modelerdraw.cpp modelerui.cpp modeleruiwindows.cxx modelerview.cpp robotarm.cpp bitmap.cpp particle.cpp particleSystem.cpp point.cpp pointObj.cpp graphwidget.cpp indicatorwindow.cpp rect.cpp rulerwindow.cpp
+         curve.cpp
+     1>curve.cpp(57): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(188): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(197): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(210): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(307): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(339): warning C4018: '<' : signed/unsigned mismatch
+     1>curve.cpp(383): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>curve.cpp(403): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+         curveevaluator.cpp
+         linearcurveevaluator.cpp
+         camera.cpp
+         modelerapp.cpp
+     1>modelerapp.cpp(41): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>modelerapp.cpp(132): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         modelerdraw.cpp
+     1>modelerdraw.cpp(150): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+         modelerui.cpp
+     1>modelerui.cpp(57): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(854) : see declaration of '_splitpath'
+     1>modelerui.cpp(86): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(854) : see declaration of '_splitpath'
+     1>modelerui.cpp(109): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(854) : see declaration of '_splitpath'
+     1>modelerui.cpp(110): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _stricmp. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(253) : see declaration of 'stricmp'
+     1>modelerui.cpp(246): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>modelerui.cpp(398): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(399): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(425): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(437): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(450): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(460): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(470): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(561): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(643): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>modelerui.cpp(721): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>modelerui.cpp(746): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>modelerui.cpp(765): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>modelerui.cpp(808): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+         modeleruiwindows.cxx
+         modelerview.cpp
+         robotarm.cpp
+         bitmap.cpp
+     1>bitmap.cpp(57): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>bitmap.cpp(157): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+         particle.cpp
+         particleSystem.cpp
+         point.cpp
+         pointObj.cpp
+         graphwidget.cpp
+     1>graphwidget.cpp(129): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(154): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(506): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(515): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(523): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(525): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(544): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(574): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(606): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(625): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(630): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(649): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(655): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(656): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(661): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(666): warning C4244: 'argument' : conversion from 'const int' to 'const float', possible loss of data
+     1>graphwidget.cpp(758): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(802): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(857): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(901): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(1031): warning C4018: '<' : signed/unsigned mismatch
+     1>graphwidget.cpp(1096): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>graphwidget.cpp(1103): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>graphwidget.cpp(1107): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>graphwidget.cpp(1108): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>graphwidget.cpp(1134): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>graphwidget.cpp(1135): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         indicatorwindow.cpp
+     1>indicatorwindow.cpp(40): warning C4018: '<' : signed/unsigned mismatch
+     1>indicatorwindow.cpp(126): warning C4018: '<' : signed/unsigned mismatch
+     1>indicatorwindow.cpp(148): warning C4018: '<' : signed/unsigned mismatch
+         rect.cpp
+         rulerwindow.cpp
+     1>rulerwindow.cpp(48): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(346) : see declaration of '_snprintf'
+     1>rulerwindow.cpp(59): warning C4018: '>=' : signed/unsigned mismatch
+     1>rulerwindow.cpp(61): warning C4018: '<' : signed/unsigned mismatch
+     1>rulerwindow.cpp(74): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\modeler.exe" /INCREMENTAL /NOLOGO /LIBPATH:local/lib opengl32.lib glu32.lib wsock32.lib fltk.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Release/Animator.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release\modeler.lib" /MACHINE:X86 /SAFESEH:NO .\Release/curve.obj
+         .\Release/curveevaluator.obj
+         .\Release/linearcurveevaluator.obj
+         .\Release/camera.obj
+         .\Release/modelerapp.obj
+         .\Release/modelerdraw.obj
+         .\Release/modelerui.obj
+         .\Release/modeleruiwindows.obj
+         .\Release/modelerview.obj
+         .\Release/robotarm.obj
+         .\Release/bitmap.obj
+         .\Release/particle.obj
+         .\Release/particleSystem.obj
+         .\Release/point.obj
+         .\Release/pointObj.obj
+         .\Release/graphwidget.obj
+         .\Release/indicatorwindow.obj
+         .\Release/rect.obj
+         .\Release/rulerwindow.obj
+         Animator.vcxproj -> C:\Users\cktang\Desktop\AniSkelS12-compressed\AniSkelS12\.\Release\modeler.exe
+     1>Done Building Project "C:\Users\cktang\Desktop\AniSkelS12-compressed\AniSkelS12\Animator.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.42
