@@ -69,9 +69,6 @@
     <ClCompile Include="modelerview.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="robotarm.cpp">
-      <Filter>Source Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="bitmap.cpp">
       <Filter>Source Files\Particles</Filter>
     </ClCompile>
@@ -98,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="rulerwindow.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="gundam.cpp">
+      <Filter>Source Files\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="vec.h">
       <Filter>Header Files\Math.</Filter>
+    </ClInclude>
+    <ClInclude Include="modelerglobals.h">
+      <Filter>Header Files\Model.</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
