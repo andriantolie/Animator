@@ -20,7 +20,7 @@ void BezierCurveEvaluator::evaluateCurve(const std::vector<Point>& ptvCtrlPts,
 	else{
 		// in case wrapping forms a new complete bezier curve
 		if (iCtrlPtCount % 3 == 0){
-			// create shadow control points
+			// create shadow control points for wrapping
 			double shadowPointTailX = fAniLength + ctrlPts[0].x;
 			double shadowPointTailY = ctrlPts[0].y;
 			Point shadowPointTail(shadowPointTailX, shadowPointTailY);
