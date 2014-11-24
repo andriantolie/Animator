@@ -15,7 +15,7 @@ public:
 		const float& fAniLength,
 		const bool& bWrap) const;
 	void displayBezier(Point v0, Point v1, Point v2, Point v3, std::vector<Point>& ptvEvaluatedCurvePts, float fAniLength) const;
-	std::vector<Point> convertDeBoor(Point b0, Point b1, Point b2, Point b3 ) const;
+	std::vector<Point> convertDeBoor(Point b0, Point b1, Point b2, Point b3) const;
 };
 
 #endif

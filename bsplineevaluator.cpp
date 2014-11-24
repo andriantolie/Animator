@@ -20,6 +20,9 @@ void BSplineEvaluator::evaluateCurve(const std::vector<Point>& ptvCtrlPts,
 		//hack to control the endpoints
 		ptvEvaluatedCurvePts.push_back(deBoorPts[0]);
 		ptvEvaluatedCurvePts.push_back(deBoorPts[iCtrlPtCount - 1]);
+		deBoorPts.insert(deBoorPts.begin(), deBoorPts[0]);
+		deBoorPts.push_back(deBoorPts[iCtrlPtCount - 1]);
+		iCtrlPtCount = deBoorPts.size();
 	}
 	else{
 
@@ -45,7 +48,7 @@ void BSplineEvaluator::evaluateCurve(const std::vector<Point>& ptvCtrlPts,
 	// begin displaying bspline
 	for (int i = 0; i + 3 < iCtrlPtCount; i++){
 		// bezier curves need 4 control point
-		std::vector<Point> ctrlPts =  convertDeBoor(deBoorPts[i], deBoorPts[i + 1], deBoorPts[i + 2], deBoorPts[i + 3]);
+		std::vector<Point> ctrlPts = convertDeBoor(deBoorPts[i], deBoorPts[i + 1], deBoorPts[i + 2], deBoorPts[i + 3]);
 		displayBezier(ctrlPts[0], ctrlPts[1], ctrlPts[2], ctrlPts[3], ptvEvaluatedCurvePts, fAniLength);
 	}
 
@@ -85,7 +88,7 @@ std::vector<Point> BSplineEvaluator::convertDeBoor(Point b0, Point b1, Point b2,
 	Point v1(v1X, v1Y);
 	Point v2(v2X, v2Y);
 	Point v3(v3X, v3Y);
-	
+
 	ctrlPts.push_back(v0);
 	ctrlPts.push_back(v1);
 	ctrlPts.push_back(v2);
