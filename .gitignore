@@ -1,0 +1,5 @@
+*.obj
+Release/modeler.exe
+*.tlog
+*.pdb
+*.obj
