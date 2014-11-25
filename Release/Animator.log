@@ -1,21 +1,26 @@
-﻿Build started 11/19/2014 4:49:50 PM.
+﻿Build started 11/25/2014 10:24:03 AM.
      1>Project "C:\Users\Justin\Documents\Visual Studio 2013\Projects\COMP4411-Animator\Animator.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         F:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Ilocal/include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D SAMPLE_SOLUTION /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt gundam.cpp
-         gundam.cpp
-     1>gundam.cpp(47): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>gundam.cpp(254): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>gundam.cpp(290): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(291): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(292): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(331): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(332): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(333): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(382): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(392): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>gundam.cpp(552): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         F:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Ilocal/include /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D SAMPLE_SOLUTION /D _VC80_UPGRADE=0x0600 /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc120.pdb" /Gd /TP /analyze- /errorReport:prompt catmullromealuator.cpp
+         catmullromealuator.cpp
+     1>catmullromealuator.cpp(24): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(28): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(32): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(67): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(68): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(69): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(70): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(71): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(76): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(100): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(101): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(102): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>catmullromealuator.cpp(103): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
        Link:
-         F:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\modeler.exe" /INCREMENTAL /NOLOGO /LIBPATH:local/lib opengl32.lib glu32.lib wsock32.lib fltk.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Release/Animator.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release\modeler.lib" /MACHINE:X86 /SAFESEH:NO .\Release/curve.obj
+         F:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\modeler.exe" /INCREMENTAL /NOLOGO /LIBPATH:local/lib opengl32.lib glu32.lib wsock32.lib fltk.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmtd.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Release/Animator.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release\modeler.lib" /MACHINE:X86 /SAFESEH:NO .\Release/beziercurveevaluator.obj
+         .\Release/bsplineevaluator.obj
+         .\Release/catmullromealuator.obj
+         .\Release/curve.obj
          .\Release/curveevaluator.obj
          .\Release/gundam.obj
          .\Release/linearcurveevaluator.obj
@@ -39,4 +44,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.51
+Time Elapsed 00:00:01.22

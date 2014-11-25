@@ -138,6 +138,9 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="beziercurveevaluator.cpp" />
+    <ClCompile Include="bsplineevaluator.cpp" />
+    <ClCompile Include="catmullromealuator.cpp" />
     <ClCompile Include="curve.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -249,8 +252,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="beziercurveevaluator.h" />
+    <ClInclude Include="bsplineevaluator.h" />
     <ClInclude Include="curve.h" />
     <ClInclude Include="curveevaluator.h" />
+    <ClInclude Include="catmullromevaluator.h" />
     <ClInclude Include="linearcurveevaluator.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="modelerdraw.h" />

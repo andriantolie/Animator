@@ -99,6 +99,15 @@
     <ClCompile Include="gundam.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
+    <ClCompile Include="beziercurveevaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="bsplineevaluator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="catmullromealuator.cpp">
+      <Filter>Source Files\Curves</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="curve.h">
@@ -163,6 +172,15 @@
     </ClInclude>
     <ClInclude Include="modelerglobals.h">
       <Filter>Header Files\Model.</Filter>
+    </ClInclude>
+    <ClInclude Include="beziercurveevaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="bsplineevaluator.h">
+      <Filter>Header Files\Curves.</Filter>
+    </ClInclude>
+    <ClInclude Include="catmullromevaluator.h">
+      <Filter>Header Files\Curves.</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
