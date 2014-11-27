@@ -17,14 +17,58 @@
 #define __PARTICLE_SYSTEM_H__
 
 #include "vec.h"
+#include <map>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
+
+// data structure for the particle
+class Particle{
+	public:
+		Particle(){
+			// build a particle with random mass, velocity and force (velocity and force are always going upward)
+			// I'm not really sure whether this initial velocity and force could give the intended behaviour, feel free to change its initial value
+			m = (rand() % 10 + 1) / 10.0;
+			x[0] = 0;
+			x[1] = 0;
+			x[2] = 0;
+			v[0] = (rand() % 11 - 5) / 5.0;
+			v[1] = (rand() % 6) / 5.0;
+			v[2] = (rand() % 11 - 5) / 5.0;
+			f[0] = (rand() % 11 - 5) / 5.0;
+			f[1] = (rand() % 6) / 5.0;
+			f[2] = (rand() % 11 - 5) / 5.0;
+		}
+		float getMass() { return m; }
+		float* getPositionVectors(){ return x; }
+		float* getVelocityVectors(){ return v; }
+		float* getForceVectors(){ return f; }
+		void setPositionVectors(float* newX){ 
+			x[0] = newX[0]; 
+			x[1] = newX[1];
+			x[2] = newX[2];
+		}
+		void setVelocityVectors(float* newV){
+			v[0] = newV[0];
+			v[1] = newV[1];
+			v[2] = newV[2];
+		}
+		void setForceVectors(float* newF){
+			f[0] = newF[0];
+			f[1] = newF[1];
+			f[2] = newF[2];
+		}
+	private:
+		float m; /* mass */
+		float x[3]; /* position vector */
+		float v[3]; /* velocity vector */
+		float f[3]; /* force accumulator*/
+};
 
 
 class ParticleSystem {
 
 public:
-
-
 
 	/** Constructor **/
 	ParticleSystem();
@@ -32,6 +76,11 @@ public:
 
 	/** Destructor **/
 	virtual ~ParticleSystem();
+
+
+	// functions from the given pdf (Physically Based Modeling: Principles and Practice)
+	Particle* getState(float *dst);
+	void setState(float *src);
 
 	/** Simulation fxns **/
 	// This fxn should render all particles in the system,
@@ -76,7 +125,9 @@ public:
 
 protected:
 	
-
+	int n;	// number of particles
+	Particle* particles; // particles contained
+	std::map<float,Particle*> bakedParticles; //container of baked particles
 
 	/** Some baking-related state **/
 	float bake_fps;						// frame rate at which simulation was baked
@@ -84,6 +135,7 @@ protected:
 										// These 2 variables are used by the UI for
 										// updating the grey indicator 
 	float bake_end_time;				// time at which baking ended
+
 
 	/** General state variables **/
 	bool simulate;						// flag for simulation mode

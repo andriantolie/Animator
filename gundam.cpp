@@ -11,6 +11,7 @@
 #include "modelerglobals.h"
 #include "camera.h"
 #include <iostream>
+#include "particlesystem.h"
 using namespace std;
 
 #define PI 3.14159265
@@ -1444,6 +1445,7 @@ int main()
 	controls[TEXTURE_MAPPING] = ModelerControl("Texture mapping option", 0, 1, 1, 0);
 	controls[FRAMEALL] = ModelerControl("Frame All?", 0, 1, 1, 0);
 
+	ParticleSystem* ps = new ParticleSystem();
 	ModelerApplication::Instance()->Init(&createGundamModel, controls, NUMCONTROLS);
 	return ModelerApplication::Instance()->Run();
 }
