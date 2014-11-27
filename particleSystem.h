@@ -18,9 +18,11 @@
 
 #include "vec.h"
 #include <map>
+#include <vector>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-
+#include <FL/gl.h>
+#include "modelerdraw.h"
 
 // data structure for the particle
 class Particle{
@@ -29,15 +31,15 @@ class Particle{
 			// build a particle with random mass, velocity and force (velocity and force are always going upward)
 			// I'm not really sure whether this initial velocity and force could give the intended behaviour, feel free to change its initial value
 			m = (rand() % 10 + 1) / 10.0;
-			x[0] = 0;
-			x[1] = 0;
-			x[2] = 0;
+			x[0] = 0.0;
+			x[1] = 0.0;
+			x[2] = 0.0;
 			v[0] = (rand() % 11 - 5) / 5.0;
 			v[1] = (rand() % 6) / 5.0;
 			v[2] = (rand() % 11 - 5) / 5.0;
-			f[0] = (rand() % 11 - 5) / 5.0;
-			f[1] = (rand() % 6) / 5.0;
-			f[2] = (rand() % 11 - 5) / 5.0;
+			f[0] = 0.0;
+			f[1] = 0.0;
+			f[2] = 0.0;
 		}
 		float getMass() { return m; }
 		float* getPositionVectors(){ return x; }
@@ -64,7 +66,6 @@ class Particle{
 		float v[3]; /* velocity vector */
 		float f[3]; /* force accumulator*/
 };
-
 
 class ParticleSystem {
 
@@ -127,7 +128,10 @@ protected:
 	
 	int n;	// number of particles
 	Particle* particles; // particles contained
+	Particle* initial_state; // initial state of the contained particles
 	std::map<float,Particle*> bakedParticles; //container of baked particles
+
+
 
 	/** Some baking-related state **/
 	float bake_fps;						// frame rate at which simulation was baked
