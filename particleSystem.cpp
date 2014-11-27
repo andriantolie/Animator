@@ -122,26 +122,23 @@ void ParticleSystem::clearBaked()
 
 // functions from the given pdf (Physically Based Modeling: Principles and Practice)
 /* gather state from the particles into dst */
-Particle* ParticleSystem::getState(float *dst){
+void ParticleSystem::getState(float *dst){
 	for (int i = 0; i < n; i++){
-		*(dst++) = particles[i].getPositionVectors[0];
-		*(dst++) = particles[i].getPositionVectors[1];
-		*(dst++) = particles[i].getPositionVectors[2];
-		*(dst++) = particles[i].getVelocityVectors[0];
-		*(dst++) = particles[i].getVelocityVectors[1];
-		*(dst++) = particles[i].getVelocityVectors[2];
+		*(dst++) = particles[i].getPositionVectors()[0];
+		*(dst++) = particles[i].getPositionVectors()[1];
+		*(dst++) = particles[i].getPositionVectors()[2];
+		*(dst++) = particles[i].getVelocityVectors()[0];
+		*(dst++) = particles[i].getVelocityVectors()[1];
+		*(dst++) = particles[i].getVelocityVectors()[2];
 	}
 }
 
 /* scatter state from src into the particles */
 void ParticleSystem::setState(float *src){
 	for (int i = 0; i < n; i++){
-		particles[i].getPositionVectors[0] = *(src++);
-	    particles[i].getPositionVectors[1] = *(src++);
-		particles[i].getPositionVectors[2] = *(src++);
-		particles[i].getVelocityVectors[0] = *(src++);
-		particles[i].getVelocityVectors[1] = *(src++);
-		particles[i].getVelocityVectors[2] = *(src++);
+		particles[i].setPositionVectors(src);
+		src += 3;
+		particles[i].setVelocityVectors(src);
 	}
 }
 

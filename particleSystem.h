@@ -79,7 +79,7 @@ public:
 
 
 	// functions from the given pdf (Physically Based Modeling: Principles and Practice)
-	Particle* getState(float *dst);
+	void getState(float *dst);
 	void setState(float *src);
 
 	/** Simulation fxns **/
