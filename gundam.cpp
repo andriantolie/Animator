@@ -16,6 +16,9 @@ using namespace std;
 
 #define PI 3.14159265
 
+Mat4f getModelViewMatrix();
+void SpawnParticles(Mat4f CameraTransforms);
+
 
 //draw bezier curve and rotate it around specific axis
 void drawRotatingCurve(float controlPoints[][3], double xRotationAxis, double yRotationAxis, double zRotationAxis){
@@ -259,6 +262,8 @@ void GundamModel::draw()
 	setDiffuseColor(COLOR_YELLOW);
 	//	setSpecularColor(0.8f, 0.5f, 0.0f);
 
+	// Get the camera matrix
+	Mat4f CameraMatrix = getModelViewMatrix();
 
 	// Start drawing the Gundam model
 	glPushMatrix();
@@ -284,6 +289,7 @@ void GundamModel::draw()
 		if (VAL(ROTATE_HEAD_Z))
 			glRotated(VAL(ROTATE_HEAD_Z), 0.0, 0.0, 1.0);
 		VAL(HEAD2) ? drawHead2() : drawHead();
+		SpawnParticles(CameraMatrix);
 		glTranslated(0.0, headSize[1] + headSize[1] / 6, 0.0);
 		glPopMatrix();
 
@@ -1405,6 +1411,30 @@ void GundamModel::animationIterator() {
 	
 }
 
+Mat4f getModelViewMatrix() {
+	GLfloat m[16];
+	glGetFloatv(GL_MODELVIEW_MATRIX, m);
+	Mat4f matMV(m[0], m[1], m[2], m[3],
+		m[4], m[5], m[6], m[7],
+		m[8], m[9], m[10], m[11],
+		m[12], m[13], m[14], m[15]);
+	return matMV.transpose();
+}
+
+void SpawnParticles (Mat4f CameraMatrix) {
+	Mat4f CurrentModelViewMatrix = getModelViewMatrix();
+	CurrentModelViewMatrix.transpose();
+	Mat4f WorldMatrix = CameraMatrix.inverse() * CurrentModelViewMatrix;
+	Vec4f WorldPoint = WorldMatrix * (Vec4f(0, 0, 0, 1));
+	ParticleSystem* ps = ModelerApplication::Instance()->GetParticleSystem();
+	float t = ModelerApplication::Instance()->GetTime();
+	if (ps) {
+		ps->computeForcesAndUpdateParticles(t);
+		ps->drawParticles(t);
+	}
+
+}
+
 int main()
 {
 	// Initialize the controls
@@ -1446,6 +1476,7 @@ int main()
 	controls[FRAMEALL] = ModelerControl("Frame All?", 0, 1, 1, 0);
 
 	ParticleSystem* ps = new ParticleSystem();
+	ModelerApplication::Instance()->SetParticleSystem(ps);
 	ModelerApplication::Instance()->Init(&createGundamModel, controls, NUMCONTROLS);
 	return ModelerApplication::Instance()->Run();
 }
