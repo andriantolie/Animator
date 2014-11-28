@@ -85,13 +85,14 @@ std::vector<Point> CatmullRomEvaluator::convertToBezier(Point p0, Point p1, Poin
 	Point v1(p1.x + 1 / 6 * (p2.x - p0.x), p1.y + 1 / 6 * (p2.y - p0.y));
 	Point v2(p2.x - 1 / 6 * (p3.x - p1.x), p2.y - 1 / 6 * (p3.y - p1.y));
 	Point v3(p2.x, p2.y);*/
+	double tension = VAL(TENSION);
 	double v0X = p1.x;
 	double v0Y = p1.y;
-	double v1X = p1.x +  (p2.x - p0.x) / 6;
+	double v1X = p1.x +  (p2.x - p0.x) / 3.0 * tension;
 	//std::cout << "p2-p0: " << (p2.x - p0.x) / 6 << std::endl;
-	double v1Y = p1.y +  (p2.y - p0.y) / 6;
-	double v2X = p2.x -  (p3.x - p1.x) / 6;
-	double v2Y = p2.y -  (p3.y - p1.y) / 6;
+	double v1Y = p1.y +  (p2.y - p0.y) / 3.0 * tension;
+	double v2X = p2.x -  (p3.x - p1.x) / 3.0 * tension;
+	double v2Y = p2.y -  (p3.y - p1.y) / 3.0 * tension;
 	double v3X = p2.x;
 	double v3Y = p2.y;
 	

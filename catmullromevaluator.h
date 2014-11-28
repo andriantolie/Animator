@@ -4,6 +4,8 @@
 #pragma warning(disable : 4786)  
 
 #include "CurveEvaluator.h"
+#include "modelerglobals.h"
+#include "modelerapp.h"
 
 class CatmullRomEvaluator : public CurveEvaluator
 {

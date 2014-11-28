@@ -1491,6 +1491,7 @@ int main()
 	controls[HAMMER] = ModelerControl("Use Hammer?", 0, 1, 1, 0);
 	controls[TEXTURE_MAPPING] = ModelerControl("Texture mapping option", 0, 1, 1, 0);
 	controls[FRAMEALL] = ModelerControl("Frame All?", 0, 1, 1, 0);
+	controls[TENSION] = ModelerControl("Adjust tension", 0.1, 1, 0.1, 0.5);
 
 	ParticleSystem* ps = new ParticleSystem();
 	ModelerApplication::Instance()->SetParticleSystem(ps);
