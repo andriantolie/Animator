@@ -289,7 +289,10 @@ void GundamModel::draw()
 		if (VAL(ROTATE_HEAD_Z))
 			glRotated(VAL(ROTATE_HEAD_Z), 0.0, 0.0, 1.0);
 		VAL(HEAD2) ? drawHead2() : drawHead();
+		glPushMatrix();
+		glTranslated(headSize[0] / 2, headSize[1], 0.0);
 		SpawnParticles(CameraMatrix);
+		glPopMatrix();
 		glTranslated(0.0, headSize[1] + headSize[1] / 6, 0.0);
 		glPopMatrix();
 
@@ -305,6 +308,10 @@ void GundamModel::draw()
 		glRotated(-rightShoulderAngle, 0.0, 1.0, 0.0); // For link movement
 		glRotated(VAL(RAISE_RIGHT_ARM_Z), 0.0, 0.0, 1.0);
 		VAL(SHOULDER2) ? drawRightShoulder2() : drawRightShoulder();
+		glPushMatrix();
+		glTranslated(-rightShoulderSize[0] / 2, rightShoulderSize[1]/2, 0.0);
+		SpawnParticles(CameraMatrix);
+		glPopMatrix();
 		//draw right upper arm
 		if (VAL(DETAIL) >= 2){
 			glTranslated(rightShoulderSize[0] / 2, rightShoulderSize[1] / 2, 0);
@@ -346,6 +353,10 @@ void GundamModel::draw()
 		glRotated(leftShoulderAngle, 0.0, 1.0, 0.0); // For link movement
 		glRotated(-VAL(RAISE_LEFT_ARM_Z), 0.0, 0.0, 1.0);
 		VAL(SHOULDER2) ? drawLeftShoulder2() : drawLeftShoulder();
+		glPushMatrix();
+		glTranslated(leftShoulderSize[0] / 2, leftShoulderSize[1] / 2, 0.0);
+		SpawnParticles(CameraMatrix);
+		glPopMatrix();
 		//draw left upper arm
 		if (VAL(DETAIL) >= 2){
 			glTranslated(-leftShoulderSize[0] / 2, leftShoulderSize[1] / 2, 0);
@@ -1428,11 +1439,17 @@ void SpawnParticles (Mat4f CameraMatrix) {
 	Vec4f WorldPoint = WorldMatrix * (Vec4f(0, 0, 0, 1));
 	ParticleSystem* ps = ModelerApplication::Instance()->GetParticleSystem();
 	float t = ModelerApplication::Instance()->GetTime();
+
+	// apply the inverse transforation matrix
+	float* glTransformationMatrix = new float[16];
+	WorldMatrix.inverse().getGLMatrix(glTransformationMatrix);
+	glMultMatrixf(glTransformationMatrix);
+	glTranslated(WorldPoint[0], WorldPoint[1], WorldPoint[2]);
 	if (ps) {
 		ps->computeForcesAndUpdateParticles(t);
 		ps->drawParticles(t);
 	}
-
+	delete [] glTransformationMatrix;
 }
 
 int main()
