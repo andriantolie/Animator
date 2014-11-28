@@ -30,13 +30,14 @@ class Particle{
 		Particle(){
 			// build a particle with random mass, velocity and force (velocity and force are always going upward)
 			// I'm not really sure whether this initial velocity and force could give the intended behaviour, feel free to change its initial value
-			m = (rand() % 33 + 33) / 100.0;
+
+			m = (rand() % 100) / 100.0;
 			x[0] = 0.0;
 			x[1] = 0.0;
 			x[2] = 0.0;
-			v[0] = (rand() % 101) / 100.0;
-			v[1] = (rand() % 6)/10.0 + 3;
-			v[2] = (rand() % 101 - 50) / 50.0;
+			v[0] = (rand() % 10 + 50) / 1000.0;
+			v[1] = (rand() % 10) / 100.0 + 1;
+			v[2] = (rand() % 11 - 5) / 1000.0;
 			f[0] = 0.0;
 			f[1] = 0.0;
 			f[2] = 0.0;

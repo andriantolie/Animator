@@ -138,9 +138,8 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 			totalForce[2] += gravityForce[2];
 
 			// air drag
-			float airDragCoeff = 3;
+			float airDragCoeff = 10;
 			float airDrag[3] = { airDragCoeff*particles[i].getVelocityVectors()[0], airDragCoeff*particles[i].getVelocityVectors()[1], airDragCoeff*particles[i].getVelocityVectors()[2] };
-//		float airDrag[3] = { airDragCoeff*particles[i].getVelocityVectors()[0], airDragCoeff*particles[i].getVelocityVectors()[1], airDragCoeff*particles[i].getVelocityVectors()[2] };
 			totalForce[0] += airDrag[0];
 			totalForce[1] += airDrag[1];
 			totalForce[2] += airDrag[2];
@@ -163,7 +162,7 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 			newVelVectors[2] = particles[i].getVelocityVectors()[2] + 1.0 / bake_fps*derivatives[5];
 
 			// reset the position of the particles if it exceeds the limit
-			double limit = 3.0;
+			double limit = 5.0;
 			if (newPosVectors[0] > limit || newPosVectors[1] > limit || newPosVectors[2] > limit){
 				newPosVectors[0] = initial_state[i].getPositionVectors()[0];
 				newPosVectors[1] = initial_state[i].getPositionVectors()[1];
@@ -199,8 +198,9 @@ void ParticleSystem::drawParticles(float t)
 		}
 
 		// draw shape
-		double size = 0.01;
-		setDiffuseColor(0.5f, 0.5f, 0.5f);
+		double size = 0.05;
+		float grayColor = (rand() % 100) / 100.0;
+		setDiffuseColor(grayColor,grayColor,grayColor);
 		for (int i = 0; i < n; i++){
 			float* location = p[i].getPositionVectors();
 			glPushMatrix();
