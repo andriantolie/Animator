@@ -23,7 +23,7 @@ ParticleSystem::ParticleSystem()
 	bake_fps = 10;
 
 	// set number of initial_state
-	n = 200;
+	n = 300;
     particles = new Particle[n];
 
 	simulate = false;
@@ -138,9 +138,9 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 			totalForce[2] += gravityForce[2];
 
 			// air drag
-			float airDragCoeff = 0.5;
-			float airDrag[3] = { 3.0, 3.0, 0.0 };
-//			float airDrag[3] = { airDragCoeff*particles[i].getVelocityVectors()[0], airDragCoeff*particles[i].getVelocityVectors()[1], airDragCoeff*particles[i].getVelocityVectors()[2] };
+			float airDragCoeff = 3;
+			float airDrag[3] = { airDragCoeff*particles[i].getVelocityVectors()[0], airDragCoeff*particles[i].getVelocityVectors()[1], airDragCoeff*particles[i].getVelocityVectors()[2] };
+//		float airDrag[3] = { airDragCoeff*particles[i].getVelocityVectors()[0], airDragCoeff*particles[i].getVelocityVectors()[1], airDragCoeff*particles[i].getVelocityVectors()[2] };
 			totalForce[0] += airDrag[0];
 			totalForce[1] += airDrag[1];
 			totalForce[2] += airDrag[2];
@@ -163,11 +163,11 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 			newVelVectors[2] = particles[i].getVelocityVectors()[2] + 1.0 / bake_fps*derivatives[5];
 
 			// reset the position of the particles if it exceeds the limit
-			double limit = 5.0;
+			double limit = 3.0;
 			if (newPosVectors[0] > limit || newPosVectors[1] > limit || newPosVectors[2] > limit){
-				newPosVectors[0] = 0.0;
-				newPosVectors[1] = 0.0;
-				newPosVectors[2] = 0.0;
+				newPosVectors[0] = initial_state[i].getPositionVectors()[0];
+				newPosVectors[1] = initial_state[i].getPositionVectors()[1];
+				newPosVectors[2] = initial_state[i].getPositionVectors()[2];
 				newVelVectors[0] = initial_state[i].getVelocityVectors()[0];
 				newVelVectors[1] = initial_state[i].getVelocityVectors()[1];
 				newVelVectors[2] = initial_state[i].getVelocityVectors()[2];
@@ -199,14 +199,15 @@ void ParticleSystem::drawParticles(float t)
 		}
 
 		// draw shape
-		double size = 0.05;
+		double size = 0.01;
 		setDiffuseColor(0.5f, 0.5f, 0.5f);
 		for (int i = 0; i < n; i++){
 			float* location = p[i].getPositionVectors();
 			glPushMatrix();
 			glTranslated(location[0], location[1], location[2]);
 			glTranslated(-size / 2, -size / 2, -size / 2);
-			drawBox(size, size, size);
+			drawSphere(size);
+			//drawBox(size, size, size);
 			glPopMatrix();
 		}
 	}
